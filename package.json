@@ -1,0 +1,23 @@
+{
+  "name": "citibank",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "keywords": [
+    "citibank"
+  ],
+  "author": "Ganiu Ibrahim",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-session": "*",
+    "morgan": "*",
+    "serve-favicon": "*"
+  }
+}

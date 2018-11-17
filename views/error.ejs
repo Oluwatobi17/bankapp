@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body style="background: white;">
+	<!-- <h1><%= messages %></h1>
+	<h2><%= error.status%></h2>
+	<pre><%= error.stack %></pre> -->
+	<nav class="top-bar">
+		<a href="https://online.citi.com/US/login.do?locale=es_US" class="top-bar-link">Espanol</a>
+		<a href="https://online.citi.com/US/JRS/pands/detail.do?ID=AOProductSelection" class="top-bar-link">Open an account</a>
+	</nav>
+	<nav class="logo-bar">
+		<img src="/images/citibank-logo.png" class="top-logo">
+	</nav>
+	<h2 style="padding: 10px; font-family: arial;">Error: <%= error.status%></h2>
+	<img src="/images/sorry.jpg" style="width: 40%; height: 250px;padding: 10px;">
+	<h4 style="padding: 10px; font-family: arial;">Please correct your link!</h4>
+</body>
+</html>

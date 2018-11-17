@@ -1,0 +1,188 @@
+
+(function(window, $, undefined){
+	$(document).ready(function() {
+		var cbolURLSearch_ = '${pb.isSmartSearchEnabled}';
+		//var cbolURLSearch = <c:out value='${cbolURLSearch}' />;
+				if("undefined" != typeof isLoggedin){
+					if("true" == isLoggedin)
+						isLoggedin=true;
+					else
+						isLoggedin = false;
+				}else{
+					var visitor = document.getElementById("searchModule").value;
+					if("N" == visitor ){
+						isLoggedin = true;
+					}else{
+						isLoggedin = false;
+					}
+				}
+				
+				if("undefined" == typeof userRole || null==userRole || "null" == userRole){
+					if("" != document.getElementById("searchUser") && "" != document.getElementById("searchUser").value){
+						var role = document.getElementById("searchUser").value;
+						userRole= role;
+					}else{
+						userRole = "VISITOR";
+					}
+					
+				}
+				
+				if("undefined" == typeof pageDef || null==pageDef || "" == pageDef || "null"==pageDef){
+					pageDef="otherPage";
+				}
+				
+				if("undefined" == typeof lang || null==lang || "" == lang || "null"==lang){
+					var langsearch = document.getElementById("searchLang").value;
+					lang = langsearch;
+				}
+				
+				
+				if("undefined" != typeof CitiSearch){
+						//CitiSearch.initSearch(pageDef,userRole,isLoggedIn,language);
+						CitiSearch.initSearch(pageDef,userRole,isLoggedin,lang);
+				}
+	});
+	$('#nav_main').detach().appendTo('#citilmHeader');
+})(window, jQuery);
+
+/**
+ * CBOL Delegate
+ * API version: v1.0.0
+ * Client version: c1
+ * owner: CBOL DVA
+ * Generated on: 10-21-16
+ */
+var NexusPlatformDelegateToCBOL = function() {
+	this.manipulateDOM = function(param) {
+		if(param == "SHOW") {
+			$CitiSearch("#nav_main .maxWidth").show();
+			$CitiSearch("#primary-nav").show(); 
+            $CitiSearch(".collase.navbar-collapse").show();  
+            //$("#citilmHeader #welcomeBarContainer").show();          
+            $CitiSearch(".responsiveBrn div.menu-nav.sessionOpt ul.mega-menu").show(); 			
+			$CitiSearch(".cbolui-ddl-topNav .navbar-default .navbar-collapse, .cbolui-ddl-topNav .navbar-default .navbar-form").show(); 
+			$CitiSearch("#citi-topNav-container .container-fluid").show();
+			$CitiSearch(".prelogin ").show();
+			$CitiSearch(".postlogin ").show();
+		} else {
+			$CitiSearch("#nav_main .maxWidth").hide();
+            $CitiSearch("#primary-nav").hide(); 
+            $CitiSearch(".collase.navbar-collapse").hide();            
+			//$("#citilmHeader #welcomeBarContainer").hide();
+            $CitiSearch(".responsiveBrn div.menu-nav.sessionOpt ul.mega-menu").hide(); 
+			$CitiSearch(".cbolui-ddl-topNav .navbar-default .navbar-collapse, .cbolui-ddl-topNav .navbar-default .navbar-form").hide(); 
+			$CitiSearch("#citi-topNav-container .container-fluid").hide();
+			$CitiSearch(".prelogin ").hide();
+			$CitiSearch(".postlogin ").hide();
+		}
+	};
+	this.onCitiSearch = function(searchQuery) {
+	//var searchData = JSON.stringify(obj);
+	var userSearchQuery = searchQuery;
+		console.log("Searching...Printing Object" +userSearchQuery);		
+		if("undefined" != typeof s){		
+			s.linkTrackVars='eVar5,eVar6,eVar38, events';
+			s.linkTrackEvents='event70';
+			s.eVar5=userSearchQuery;
+			s.eVar6='[Search Result Clicked]';
+			s.events='event70';
+			s.eVar38=s.pageName;
+			s.tl(this,searchQuery,'Smart Assist Search Term');
+		}
+	
+	};
+	
+	this.onClickSearchResultClick = function(obj) {
+        var val1=$CitiSearch("#citi-autocomplete-content-searchbox-livesearch").val();
+		var val2=$CitiSearch("#citi-autocomplete-content-searchbox-fullsearch").val();
+		console.log("Searching..Printing Object" +obj);
+		if ("undefined" != typeof s) {
+			if(null != val1 &&(''!=val1) || null!=val2){
+				s.linkTrackVars = 'eVar5,eVar6,eVar38, events';
+				if (null != val1) {
+					s.eVar5 = val1;
+				} else{
+					s.eVar5 = obj;
+				}
+				s.linkTrackEvents = 'event72';
+				s.events = 'event72';
+			} else {
+				s.linkTrackVars = 'eVar5,eVar6,eVar38, events';
+				s.eVar5 = 'null';
+			}
+			s.eVar6 = '[Search Result Clicked]';
+			s.eVar38 = s.pageName;
+			s.tl(this, 'o', 'Smart Assist Search Term');
+		}
+	};
+	
+	this.noSearchResult = function(SearchTerm) {
+		console.log("Searching.Printing Object" +SearchTerm);
+		if("undefined" != typeof s){		
+			s.linkTrackVars='eVar5,eVar38, events';
+			s.linkTrackEvents='event71';
+			s.eVar5='null |[' + SearchTerm + ']';
+			s.events='event71';
+			s.eVar38=s.pageName;
+			s.tl(this,'o','Smart Assist Search Term');
+		}
+	
+	};
+	
+	
+}; 
+
+
+var NexusPlatformChatEscalationCBOL = function() {
+		
+	this.escalationToChat = function(obj) {
+		
+		if (typeof lpTag !== "undefined"){
+			lpTag.newPage(document.location.href,{
+				section: ["help", pageDef, pageName, "0", ""]
+			
+			});
+		}
+		
+	};
+	
+	this.escalationToCBOLPage = function(navigateID) {
+		var navigateContactUSURL = navigateID ; 
+		var navigateContactUSURLEncoded = Base64.encode(navigateContactUSURL);
+		var getContextPath = function() {
+			var paramString = '';
+			var contextPath = document.URL;
+			contextPath  = contextPath.split("/");
+			for(var i=3; i<(contextPath.length-1); i++){
+				contextPath[i];
+				paramString +="../";
+			}
+			contextPath  = contextPath[3];
+			
+			return [contextPath,paramString];
+		};
+		/*Creating resource call URL */					
+		var getUtilURL = getContextPath();
+		var contextPath = getUtilURL[0];
+		var getParam = getUtilURL[1];
+		var actionURL = contextPath + "/" + getParam + "REST/dvaResource/dvaSmartSearchNavigation.jws?";
+		/* creating navigation form and sending navigation ID to backend for navigation */					
+		var conatctUSNavigationform = document.createElement("form");
+
+		conatctUSNavigationform.setAttribute('method',"post");
+		conatctUSNavigationform.setAttribute('action',actionURL);
+		conatctUSNavigationform.setAttribute('id','contactUSNavigationformID');
+		
+		var navigateURLRField = document.createElement("input"); 
+		navigateURLRField.setAttribute('type',"hidden");
+		navigateURLRField.setAttribute('value',navigateContactUSURLEncoded);
+		navigateURLRField.setAttribute('name',"navigateIdEncoded");
+		
+		conatctUSNavigationform.appendChild(navigateURLRField);
+	
+		document.getElementsByTagName('body')[0].appendChild(conatctUSNavigationform);
+		document.getElementById("contactUSNavigationformID").submit();
+	};
+
+	
+}; 

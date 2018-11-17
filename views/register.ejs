@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is where you register a new user</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body onload="hideMessage()">
+	<nav class="top-bar">
+		<a href="https://online.citi.com/US/login.do?locale=es_US" class="top-bar-link">Espanol</a>
+		<a href="https://online.citi.com/US/JRS/pands/detail.do?ID=AOProductSelection" class="top-bar-link">Open an account</a>
+	</nav>
+	<nav class="logo-bar">
+		<% if(!adminUser){ %>
+			<form class="admin-login" action="/admin/login" method="post">
+				<input type="text" name="username" placeholder="Username">
+				<input type="password" name="password" placeholder="Password">
+				<input type="submit" value="Login">
+			</form>
+		<%}else{%>
+			<a href="/admin/home" class="adminSignout">Home</a>
+			<a href="/adminSignout" class="adminSignout">Sign out</a>
+		<%}%>
+		
+		<img src="/images/citibank-logo.png" class="top-logo">
+	</nav>
+	<% if(message){%>
+		<div id='message' style="padding: 15px 10px; text-align: center;background: #00FF33 ;font-family: arial; color: #003300; font-size: 15px"><%= message %>
+			<img src="/images/close.png" class="close" style="width: 20px; height: 20px;margin-top: 1px; float: right;" onClick="closePane()" />
+		</div>
+	<%}%>
+
+	<% if(adminUser){ %>
+		<form action="/register" method="post" class="reg-form">
+			<h4 style="font-family: arial; margin-left: 10px;">Register</h4>
+			<input type="text" name="userId" placeholder="Username/UserId" class="form-input" required>
+			<input type="text" name="name" placeholder="Name" class="form-input" required>
+			<input type="email" name="email" placeholder="Email" class="form-input"required>
+			<input type="password" name="password" placeholder="Password" class="form-input" required>
+			<input type="password" name="password2" placeholder="Confirm password" class="form-input" required>
+			<input type="number" name="accountBal" placeholder="Account Balance" class="form-input" required>
+			<input type="text" name="country" placeholder="Country(America)" class="form-input" required>
+			<input type="text" name="currency" placeholder="Country currency(USD)" class="form-input" required>
+			<input type="text" name="lastLogin" placeholder="Last Login(24 Jun 2018 at 10:09 PM)" class="form-input" required>
+			<input type="submit" value="Register" class="form-submit">
+		</form>
+	<%}%>
+</body>
+<script type="text/javascript" src="/javascripts/script.js"></script>
+</html>

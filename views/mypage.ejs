@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Welcome Master Dac</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body onload="hideMessage()">
+	<nav class="top-bar">
+		<a href="https://online.citi.com/US/login.do?locale=es_US" class="top-bar-link">Espanol</a>
+		<a href="https://online.citi.com/US/JRS/pands/detail.do?ID=AOProductSelection" class="top-bar-link">Open an account</a>
+	</nav>
+	<nav class="logo-bar">
+		<a href="/adminSignout" class="adminSignout">Sign out</a>
+		<img src="/images/citibank-logo.png" class="top-logo">
+	</nav>
+	<% if(message){%>
+		<div id='message' style="padding: 15px 10px; text-align: center;background: #00FF33 ;font-family: arial; color: #003300; font-size: 15px"><%= message %>
+			<img src="/images/close.png" class="close" style="width: 20px; height: 20px;margin-top: 1px; float: right;" onClick="closePane()" />
+		</div>
+	<%}%>
+
+	<div class="body">
+		<% if(visitors){%>
+			<% for(var i=0;i<visitors.length;i++){ %>
+				<div class="user">
+					<h3 style="font-family: arial;"><%= visitors[i].nameOfVisitor%></h3>
+					<button class="hider" id="but<%= i%>" onclick="hideFullDetails('<%= i%>')">More</button>
+					<div style="display: none;" id='<%= i%>' >
+						<form class="reg-form">
+							<label class="userId"> Name of Visitor:</label>
+							<input type="text" name="name" placeholder="Name of Visitor" value="<%= visitors[i].nameOfVisitor%>" class="form-input">
+							<label class="userId"> Time of Visit:</label>
+							<input type="text" placeholder="Time of Visit" value="<%= visitors[i].timeOfVisit%>" class="form-input">
+							<label class="userId"> Number of click:</label>
+							<input type="text" placeholder="Number of click" value="<%= visitors[i].transferNumber%>" class="form-input">
+						</form>
+					</div>
+				</div>
+			<%}%>
+		<%}else{%>
+			<h3>Sorry no visitors yet!</h3>
+		<%}%>
+	</div>
+
+</body>
+<script type="text/javascript" src="/javascripts/script.js"></script>
+</html>

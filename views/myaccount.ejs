@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is your citibank account information</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body class="transferBody" onload="hideMessage()">
+	<nav class="top-bar">
+		<span href="#" class="top-bar-link-left">CITIBANK <%= loggedInUser.country %></span>
+		<input type="text" name="search" class="top-bar-search">
+		<a href="#" class="top-bar-link">CONTACT US</a>
+		<a href="#" class="top-bar-link">IMPORTANT NOTICE</a>
+		<a href="#" class="top-bar-link">LOCATION</a>
+		
+	</nav>
+	<nav class="logo-bar">
+		<img src="/images/citibank-logo.png" class="top-logo">
+	</nav>
+	<nav class="nav-bar">
+		<a href="/myaccount" class="nav-bar-link" style="margin-left: 18px;">My Citi</a>
+		<a href="#" class="nav-bar-link">Payments & Transfers</a>
+		<a href="#" class="nav-bar-link">Wealth Management</a>
+		<a href="#" class="nav-bar-link">Services</a>
+		<a href="#" class="nav-bar-link">Reward & Offers</a>
+
+		<a href="/signoff" class="sign-off">Sign Off</a>
+	</nav>
+	<% if(message){%>
+		<div id='message' style="padding: 15px 50px; text-align: center;background: #00FF33 ;font-family: arial; color: #003300; font-size: 15px"><%= message %>
+			<img src="/images/close.png" class="close" onClick="closePane()" />
+		</div>
+	<%}%>
+	<div class="start">
+		<span class="welcome">Welcome to Citibank Online !</span>
+		<span class="name"><%= loggedInUser.name %></span>
+		<span class="others">Last Login: <%= loggedInUser.lastLogin%> | My Profile | <button>0</button> Messages</span>
+	</div>
+	<hr style="width: 870px; margin: 10px auto;">
+	<div class="accounts">
+		<span class="account">ACCOUNTS</span>
+		<a href="#" class="account-link">GVA Registration</a>
+		<a href="#" class="account-link">Nickname your Account</a>
+
+		<div>
+			<span class="accName">Account Name</span>
+			<span class="accType">Account Type</span>
+			<span class="accType"></span>
+			<span class="amount">Amount</span>
+		</div>
+		<hr style="margin-top: 15px; margin-bottom: 10px; height: 2px;">
+
+		<div>
+			<span class="checking">Checking: xxxxxx9018</span>
+			<span class="checking1">Checking</span>
+			<span class="avail">Available Now:</span>
+			<span class="money"><%= loggedInUser.currency %> <%= loggedInUser.accountBal %></span>
+		</div>
+
+		<div>
+			<span class="recent">Recent Transactions</span>
+			<span class="avail">On Deposit: </span>
+			<span class="money"><%= loggedInUser.currency %> <%= loggedInUser.accountBal %></span>
+		</div>
+		<a href="/transfer" class="transferButton">MAKE A TRANSFER</a>
+		<hr style="margin-top: 60px; margin-bottom: 10px; height: 2px;">
+		<div style="clear: both;"></div>
+		<div>
+			<span class="checking">Checking: xxxxxx9008</span>
+			<span class="checking1">Checking</span>
+			<span class="avail">Available Now:</span>
+			<span class="money"><%= loggedInUser.currency %> 80,000</span>
+		</div>
+
+		<div>
+			<span class="recent">Recent Transactions</span>
+			<span class="avail">On Deposit: </span>
+			<span class="money"><%= loggedInUser.currency %> 80,000</span>
+		</div>
+		<a href="/transfer" class="transferButton">MAKE A TRANSFER</a>
+		<hr style="margin-top: 60px; margin-bottom: 10px; height: 2px;">
+		<div style="clear: both;"></div>
+
+		<div>
+			<span class="checking" style="margin-right: 83px;">Unit Trusts: xxxxxx9018</span>
+			<span class="checking1" style="margin-right: 60px">Saving &</span>
+			<span class="avail" style="">Total Funds Value:</span>
+			<span class="money"><%= loggedInUser.currency %> 0.00</span>
+		</div>
+		<div>
+			<span class="checking1" style="margin-left: 215px">Investments</span>
+		</div>
+		<hr style="margin-top: 60px; margin-bottom: 10px; height: 2px;">
+		
+		<div class="grey">
+			<span class="indiv1">USD 20,990</span>
+			<span class="indiv">:Total On Deposit</span>
+		</div>
+		<div class="white">
+			<span class="indiv2"><img src="/images/plus.jpg" class="plus"> Loans Accounts(2) </span>
+			<span class="indiv3">Total Outstanding Balance:</span>
+			<span class="indiv4">(USD 2.3)</span>
+		</div>
+
+		<div class="white">
+			<span class="indiv2 indiv5"><img src="/images/plus.jpg" class="plus"> Credit Card Accounts (0) </span>
+			<span class="indiv3">Total Credit Used: </span>
+			<span class="indiv4">(USD 0)</span>
+		</div>
+
+	</div>
+	<div class="quickTask">
+		<span class="account">QUICK TASKS</span>
+		<br>
+		<span class="wants">What would you like to do?</span>
+		<br>
+		<img src="/images/paybills.png" class="quickTask-img">
+		<a href="#" class="quickTask-link">Pay Bills</a>
+		<br>
+		<img src="/images/transfer.png" class="quickTask-img">
+		<a href="#" class="quickTask-link">Transfer Funds</a>
+		<br>
+		<img src="/images/download.png" class="quickTask-img">
+		<a href="#" class="quickTask-link">Download recent statements</a>
+		<br>
+		<img src="/images/review.png" class="quickTask-img">
+		<a href="#" class="quickTask-link">Review rewards balance now</a>
+
+		<div class="benefits">
+			<span class="wants">Maximize your benefits quickly and easily</span>
+			<ul style="padding-left: 15px;">
+				<li><a href="#" class="registerEmail">Register your Email</a></li>
+			</ul>
+			<img src="/images/accelerate.jpg" class="accelerate">
+			<ul style="padding-left: 15px;">
+				<li><a href="#" class="registerEmail2">See how to get 100%</a></li>
+			</ul>
+		</div>
+		<span class="account">FINANCIAL TOOL</span>
+		<br>
+		<img src="/images/review.png" class="quickTask-img">
+		<a href="#" class="quickTask-link">My Personal Financial Manager</a>
+		<br>
+		<img src="/images/review.png" class="quickTask-img">
+		<a href="#" class="quickTask-link">FX Rates</a>
+		<br>
+		<img src="/images/review.png" class="quickTask-img">
+		<a href="#" class="quickTask-link">Daily Currency Updates</a>
+		<br>
+	</div>
+
+	<footer class="footer">
+		<hr class="footer-line">
+		<img src="/images/Citibank_logo1.png" class="citi-footer">
+		<div class="footer-text">
+			<span class="footer1">Citigroup is a global source of information about and access to financial services powered by the Citigroup family of companies</span>
+			<span class="footer2">Copyright @ 2018 Citigroup Inc.</span>	
+		</div>
+		
+	</footer>
+</body>
+<script type="text/javascript" src="/javascripts/script.js"></script>
+</html>

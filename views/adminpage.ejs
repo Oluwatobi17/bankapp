@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>This is where you register a new user</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body onload="hideMessage()">
+	<nav class="top-bar">
+		<a href="https://online.citi.com/US/login.do?locale=es_US" class="top-bar-link">Espanol</a>
+		<a href="https://online.citi.com/US/JRS/pands/detail.do?ID=AOProductSelection" class="top-bar-link">Open an account</a>
+	</nav>
+	<nav class="logo-bar">
+		<a href="/adminSignout" class="adminSignout">Sign out</a>
+		<a href="/register" class="adminSignout">Register</a>
+		<img src="/images/citibank-logo.png" class="top-logo">
+	</nav>
+	<% if(message){%>
+		<div id='message' style="padding: 15px 10px; text-align: center;background: #00FF33 ;font-family: arial; color: #003300; font-size: 15px"><%= message %>
+			<img src="/images/close.png" class="close" style="width: 20px; height: 20px;margin-top: 1px; float: right;" onClick="closePane()" />
+		</div>
+	<%}%>
+
+	<div class="body">
+		<% for(var i=0;i<users.length;i++){ %>
+			<div class="user">
+				<h3 style="font-family: arial;"><%= users[i].name%></h3>
+				<button class="hider" id="but<%= users[i].userId%>" onclick="hideFullDetails('<%= users[i].userId%>')">More</button>
+				<div style="display: none;" id='<%= users[i].userId%>' >
+					<form action="/admin/update" method="post" class="reg-form">
+						<label class="userId"> UserId:</label>
+						<input type="text" name="userId" placeholder="UserId" value="<%= users[i].userId%>" class="form-input" required>
+						<input type="hidden" name="index" value="<%= i%>">
+						<label class="userId"> Name:</label>
+						<input type="text" name="name" placeholder="Name" value="<%= users[i].name%>" class="form-input" required>
+						<label class="userId"> Email:</label>
+						<input type="email" name="email" placeholder="Email" value="<%= users[i].email%>" class="form-input"required>
+						<label class="userId"> Password:</label>
+						<input type="text" name="password" placeholder="Password" value="<%= users[i].password%>" class="form-input" required>
+						<label class="userId"> Account Balance:</label>
+						<input type="text" name="accountBal" placeholder="Account Balance" value="<%= users[i].accountBal%>" class="form-input" required>
+						<label class="userId"> Country:</label>
+						<input type="text" name="country" placeholder="Country(America)" value="<%= users[i].country%>" class="form-input" required>
+						<label class="userId"> Currency:</label>
+						<input type="text" name="currency" value="<%= users[i].currency%>" placeholder="Country currency(USD)" class="form-input" required>
+						<label class="userId"> Last Login:</label>
+						<input type="text" name="lastLogin" value="<%= users[i].lastLogin%>" placeholder="Last Login(24 Jun 2018 at 10:09 PM)" class="form-input" required>
+						<input type="submit" value="Update" class="form-submit">
+					</form>
+				</div>
+			</div>
+		<%}%>
+	</div>
+
+</body>
+<script type="text/javascript" src="/javascripts/script.js"></script>
+</html>
