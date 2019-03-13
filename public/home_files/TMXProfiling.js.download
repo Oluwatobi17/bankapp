@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+console.log("start tmxProfiling.js");	
+function getRequestParams() {
+	console.log("tmxProfiling js execute");	
+	jQuery.ajax({
+		 url:"/US/REST/ManageTMXProfile/TMXProfile.jws",
+		 type:"POST",
+		 async: false,
+		 success: function(showData,status, jqXHR){
+			 console.log("success"+showData.tmxFallback+showData.digitalApplicationType+showData.tmxSessionID+showData.orgID+showData.profilingURL);	
+			 if(showData.tmxFallback !=null && showData.tmxFallback == 'false'){
+				 console.log("tmxfallback");	
+				if(showData.digitalApplicationType !=null && showData.tmxSessionID!=null && showData.orgID!=null){
+					console.log("get everyparams"+showData.orgID+showData.digitalApplicationType+showData.tmxSessionID);	
+					 	var JSLink = showData.profilingURL+"?org_id="+showData.orgID+"&session_id="+showData.tmxSessionID+"&allow_reprofile="+1;
+					    var JSElement = document.createElement('script');
+					    JSElement.src = JSLink;
+					    document.getElementsByTagName('head')[0].appendChild(JSElement);
+					    document.cookie="tmx_sessionid="+showData.tmxSessionID+"; path=/; domain=citi.com; secure";
+					    document.cookie="tmx_digitalApptype="+showData.digitalApplicationType+"; path=/; domain=citi.com; secure";
+				}
+				 
+			}
+		 }
+	});
+	
+
+}

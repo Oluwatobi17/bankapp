@@ -1,0 +1,2 @@
+Bootstrapper.bindDOMLoaded(function(){var Bootstrapper=window["Bootstrapper"];var ensightenOptions=Bootstrapper.ensightenOptions;Bootstrapper.bindDOMParsed(function(){var frame=document.createElement("iframe");frame.style.display="none";frame.style.width="1px";frame.style.height="1px";frame.src="https://6417343.fls.doubleclick.net/activityi;src\x3d6417343;type\x3dgcb_v0;cat\x3dgcb_c00;dc_lat\x3d;dc_rdid\x3d;ord\x3d"+Math.random()*1E13+"?";frame.title="No Content";document.body.appendChild(frame)})},
+2138762,498250);

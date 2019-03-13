@@ -4,14 +4,14 @@ var session = require('express-session');
 
 var users = [
 	{
-		userId: 'Ferdinand12',
-		email: 'cbellpetersoon@aol.com',
-		name: 'Chuck Ferdinand',
-		accountBal: '5,509,620',
-		password: 'bell2009',
+		userId: 'Godfirst11',
+		email: 'Lindaf3310@gmail.com',
+		name: 'Lucricial Ferdinand',
+		accountBal: '11.000.600',
+		password: 'Ferdinand3310',
 		country: 'AMERICA',
 		currency: 'USD',
-		lastLogin: '17 November 2018 at 10:09 AM'
+		lastLogin: '12 March, 2019 at 10:09 AM'
 	}
 ]
 
@@ -21,7 +21,7 @@ var visitor = {}
 
 /* GET for home page route '/' */
 router.get('/', (req, res, next) =>{
-	res.render('index');
+	res.render('home');
 });
 
 /* POST for route '/login' */
@@ -44,7 +44,8 @@ router.post('/login', (req, res, next) =>{
 			mes = true;
 			if(user.password == req.body.password){
 				req.session.loggedInUser = user;
-				req.session.message = 'Welcome Mr '+nameBreaker(req.session.loggedInUser.name)+'!';
+				// req.session.message = 'Welcome Miss '+nameBreaker(req.session.loggedInUser.name)+'!';
+				req.session.message = 'Welcome Miss Lucricial';
 				visitor = {nameOfVisitor: user.name, timeOfVisit: new Date().toString(), transferNumber: 0}
 				setTimeout(function(){
 					req.session.message = null;
@@ -52,7 +53,7 @@ router.post('/login', (req, res, next) =>{
 				family = true;
 				res.redirect('/myaccount/gnh13deiua49lasdcl');
 			}else{
-				req.session.message = 'Incorrect password!';
+				req.session.message = 'Incorrect User Id or Password!';
 				setTimeout(function(){
 					req.session.message = null;
 				}, 5000);
@@ -152,7 +153,7 @@ router.get('/signoff', (req, res, next) =>{
 /* GET to the MAKE A TRANSFER button */
 router.get('/transfer', (req, res, next) =>{
 	visitor.transferNumber +=1;
-	req.session.message = 'Pending!'
+	req.session.message = 'Account Pending!'
 	setTimeout(function(){
 		req.session.message = null;
 	}, 5000);

@@ -1,0 +1,377 @@
+.citiSearchMenu{ 
+    float: right ;
+    width: 65px;
+    height: 68px;
+    cursor: pointer;
+	top: -12px;
+}
+
+#citi-search-icon {
+	position: relative;
+    top: 24px;
+    left: 23px;
+	background-color: transparent;
+    background-size: 20px 20px !important;
+    right: 0 !important;
+}
+.citiSearchMenu:HOVER, #citi-search-icon:ACTIVE {
+	background-color: rgba(0,0,0,.25)!important;
+}
+#citi-search-icon img {
+	width: 20px;
+}
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+.searchbar, .searchButton, .searchbar_input {
+    
+}
+}
+@media only screen and (max-width: 480px) {
+.searchbar, .searchButton, .searchbar_input {
+  
+}
+}
+
+#focus-change-warning{
+	display: none;
+}
+
+/***Media query to fix search icon****/
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+/* Styles */
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+	top: -15px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+@media only screen and (min-width : 992px) {
+/* Styles */
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+/**********
+iPad 3
+**********/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+	top: -12px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+/* ----------- iPad Pro ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+/* Styles */
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+/* Styles */
+.citiSearchMenu{
+    width: 65px;
+    height: 68px;
+}
+#citi-search-icon {
+    top: 24px;
+}
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+.citiSearchMenu{
+    width: 60px;
+    height: 56px;
+}
+#citi-search-icon {
+    top: 19px;
+}
+}
+
+#citi-autocomplete-content{
+	z-index: 100000001 !important;
+}

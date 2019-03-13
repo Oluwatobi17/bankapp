@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Creditcard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="0-Entry" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0-Entry-Temporary-Modal" transform="translate(-364.000000, -380.000000)">
+            <g id="Base-Modal">
+                <g id="Modal" transform="translate(324.000000, 186.000000)">
+                    <g id="Secondary-CTA" transform="translate(40.000000, 194.000000)">
+                        <g id="Creditcard">
+                            <path d="M20,40 C31.047,40 40,31.045 40,20 C40,8.955 31.047,0 20,0 C8.953,0 0,8.955 0,20 C0,31.045 8.953,40 20,40" id="Fill-1" fill="#056DAE"></path>
+                            <path d="M32,14 C32,12.894 31.105,12 30,12 L10,12 C8.898,12 8,12.894 8,14 L8,16 L32,16 L32,14 Z M32,26 L32,24.117 L24.703,28 L30,28 C31.105,28 32,27.105 32,26 Z M10,28 L20.441,28 L32,21.852 L32,18 L8,18 L8,26 C8,27.105 8.898,28 10,28 Z M34,14 L34,26 C34,28.207 32.211,30 30,30 L10,30 C7.789,30 6,28.207 6,26 L6,14.002 L6.004,14 L6,14 C6,11.793 7.789,10 10,10 L30,10 C32.211,10 34,11.793 34,14 Z M10,24 L20,24 L20,22 L10,22 L10,24 Z" id="Fill-2" fill="#FFFFFE"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

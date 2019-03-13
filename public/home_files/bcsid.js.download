@@ -1,0 +1,30 @@
+var bcCookieName = "bcsid";
+var bcsid = getBCCookie(bcCookieName);
+ if (bcsid == ""){
+ setBCCookie(bcCookieName);
+ console.log("Setting new bcsid Cookie");
+ }
+ else {
+ console.log("bcsid cookie already present");
+ }
+
+function setBCCookie(bcCookieName) {
+var csid=Math.random().toString(16).slice(3).toUpperCase()+Math.random().toString(16).slice(3).toUpperCase()+Math.random().toString(16).slice(3,11).toUpperCase();
+document.cookie = bcCookieName + "=" + csid + "; path=/; domain=citi.com; secure";
+}
+
+function getBCCookie(cookieName) {
+    var gcsid = cookieName + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(gcsid) == 0) {
+            return c.substring(gcsid.length, c.length);
+        }
+    }
+    return "";
+}
